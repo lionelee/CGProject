@@ -1,0 +1,4 @@
+﻿  fireworkbox.cpp
+c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdlib.h(343): warning C4005: “RAND_MAX”: 宏重定义
+  c:\users\10911\source\repos\cgproject\cgproject\macros.h(30): note: 参见“RAND_MAX”的前一个定义
+  CGProject.vcxproj -> C:\Users\10911\source\repos\CGProject\Debug\CGProject.exe
