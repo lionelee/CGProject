@@ -31,36 +31,6 @@ void Camera::look()
 	gluLookAt(cam_x, cam_y, cam_z, cen_x, cen_y, cen_z, 0.0f, 1.0f, 0.0f);
 }
 
-void Camera::look(Direction d)
-{
-	switch (d){
-	case LEFT:
-		angle_lng -= CAMERA_A;
-		if (angle_lng < -2 * PI) angle_lng = 0;
-		break;
-	case RIGHT:
-		angle_lng += CAMERA_A;
-		if (angle_lng > 2 * PI) angle_lng = 0;
-		break;
-	case UP:
-		angle_lat += CAMERA_A;
-		angle_lat = MIN(angle_lat, PI/2);
-		break;
-	case DOWN:
-		angle_lat -= CAMERA_A;
-		angle_lat = MAX(angle_lat, -PI / 2);
-		break;
-	default: break;
-	}
-	checkFacialOrient();
-
-	cen_x = cam_x + CAMERA_R * cos(angle_lat) * sin(angle_lng);
-	cen_z = cam_z - CAMERA_R * cos(angle_lat) * cos(angle_lng);
-	cen_y = cam_y + CAMERA_R * sin(angle_lat);
-	glLoadIdentity();
-	gluLookAt(cam_x, cam_y, cam_z, cen_x, cen_y, cen_z, 0.0f, 1.0f, 0.0f);
-}
-
 void Camera::move(Direction d)
 {
 	checkBorderCross();
@@ -101,11 +71,36 @@ void Camera::move(Direction d)
 	}
 	flag_left = flag_right = flag_forward = 
 		flag_backward = flag_up = flag_down = true;
+	glLoadIdentity();
+	gluLookAt(cam_x, cam_y, cam_z, cen_x, cen_y, cen_z, 0.0f, 1.0f, 0.0f);
+}
 
-	/*cam_x = MAX(cam_x, SCENE_SIZE - TX_SIZE_MIN);
-	cam_x = MAX(cam_x, TX_SIZE_MIN);
-	cam_z = MAX(cam_z, SCENE_SIZE - TX_SIZE_MIN);
-	cam_z = MAX(cam_z, TX_SIZE_MIN);*/
+void Camera::rotate(Direction d, int delta)
+{
+	switch (d) {
+	case LEFT:
+		angle_lng -= delta * CAMERA_A;
+		if (angle_lng < -2 * PI) angle_lng = 0;
+		break;
+	case RIGHT:
+		angle_lng += delta * CAMERA_A;
+		if (angle_lng > 2 * PI) angle_lng = 0;
+		break;
+	case UP:
+		angle_lat += delta * CAMERA_A;
+		angle_lat = MIN(angle_lat, PI / 2);
+		break;
+	case DOWN:
+		angle_lat -= delta * CAMERA_A;
+		angle_lat = MAX(angle_lat, -PI / 2);
+		break;
+	default: break;
+	}
+	checkFacialOrient();
+
+	cen_x = cam_x + CAMERA_R * cos(angle_lat) * sin(angle_lng);
+	cen_z = cam_z - CAMERA_R * cos(angle_lat) * cos(angle_lng);
+	cen_y = cam_y + CAMERA_R * sin(angle_lat);
 	glLoadIdentity();
 	gluLookAt(cam_x, cam_y, cam_z, cen_x, cen_y, cen_z, 0.0f, 1.0f, 0.0f);
 }

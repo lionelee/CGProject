@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2010
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CGProject", "CGProject\CGProject.vcxproj", "{A008BADA-19EB-4E4B-8A09-9E2062A2CB29}"
 EndProject
@@ -13,8 +13,8 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A008BADA-19EB-4E4B-8A09-9E2062A2CB29}.Debug|x64.ActiveCfg = Debug|x64
-		{A008BADA-19EB-4E4B-8A09-9E2062A2CB29}.Debug|x64.Build.0 = Debug|x64
+		{A008BADA-19EB-4E4B-8A09-9E2062A2CB29}.Debug|x64.ActiveCfg = Debug|Win32
+		{A008BADA-19EB-4E4B-8A09-9E2062A2CB29}.Debug|x64.Build.0 = Debug|Win32
 		{A008BADA-19EB-4E4B-8A09-9E2062A2CB29}.Debug|x86.ActiveCfg = Debug|Win32
 		{A008BADA-19EB-4E4B-8A09-9E2062A2CB29}.Debug|x86.Build.0 = Debug|Win32
 		{A008BADA-19EB-4E4B-8A09-9E2062A2CB29}.Release|x64.ActiveCfg = Release|x64

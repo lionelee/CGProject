@@ -76,10 +76,16 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>legacy_stdio_definitions.lib;glaux.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -121,11 +127,14 @@
     <ClInclude Include="glm.h" />
     <ClInclude Include="gui.h" />
     <ClInclude Include="keyboard.h" />
+    <ClInclude Include="leave.h" />
     <ClInclude Include="macros.h" />
     <ClInclude Include="light.h" />
+    <ClInclude Include="mouse.h" />
     <ClInclude Include="objmodel.h" />
     <ClInclude Include="particle.h" />
     <ClInclude Include="scene.h" />
+    <ClInclude Include="tree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="camare.cpp" />
@@ -134,11 +143,14 @@
     <ClCompile Include="glm.cpp" />
     <ClCompile Include="gui.cpp" />
     <ClCompile Include="keyboard.cpp" />
+    <ClCompile Include="leave.cpp" />
     <ClCompile Include="light.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mouse.cpp" />
     <ClCompile Include="objmodel.cpp" />
     <ClCompile Include="particle.cpp" />
     <ClCompile Include="scene.cpp" />
+    <ClCompile Include="tree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

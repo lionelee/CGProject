@@ -24,20 +24,22 @@ public:
 
 	void init();
 	void look();
-	void look(Direction d);
 	void move(Direction d);
+	void rotate(Direction d, int delta);
+	double getAngleLat() { return angle_lat; };
+	double getAngleLng() { return angle_lng; };
 
 private:
 	GLdouble cam_x, cam_y, cam_z;				//camera position
 	GLdouble cen_x, cen_y, cen_z;					//camera eyeing-at position
-	double angle_lat, angle_lng;					//camera rotating angle
+	double angle_lat, angle_lng;						//camera rotating angle
 
-	Direction face_orient;								//facial orientation
+	Direction face_orient;									//facial orientation
 	bool flag_left, flag_right, flag_forward,
-		flag_backward, flag_up, flag_down;	//flag to prevent beyond border
+		flag_backward, flag_up, flag_down;		//flag to prevent beyond border
 	
 	void checkFacialOrient();							//check facial orientation
-	void checkBorderCross();						//check whether crossing border
+	void checkBorderCross();							//check whether crossing border
 };
 
 #endif CAMERA_H

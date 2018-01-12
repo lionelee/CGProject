@@ -11,11 +11,18 @@ public:
 
 	void init();
 	void render();
+	bool occupy(int x, int z, int type);
+	bool release(int x, int z, int type);
 
 private:
-	unsigned int texture[TX_NUM];
-
 	void renderSkybox();
+	int grid[SCENE_SIZE / GRID_SIZE][SCENE_SIZE / GRID_SIZE];
+
+	float mat[3][4] = {
+		{ 0.75f, 0.75f, 0.75f, 1.0f },
+		{ 0.8f, 0.8f, 0.8f, 1.0f },
+		{ 1.0f, 1.0f, 1.0f, 1.0f }
+	};
 };
 
 #endif SCENE_H

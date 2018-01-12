@@ -30,9 +30,6 @@
     <ClInclude Include="macros.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="keyboard.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="glm.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -46,6 +43,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="fireworkbox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="leave.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboard.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -65,9 +74,6 @@
     <ClCompile Include="camare.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="keyboard.cpp">
-      <Filter>头文件</Filter>
-    </ClCompile>
     <ClCompile Include="glm.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -81,6 +87,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="fireworkbox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mouse.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="tree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="leave.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="keyboard.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -6,7 +6,7 @@
 class Firework : Particle
 {
 public:
-	Firework(int posx, int posz);
+	Firework(int posx, int posz, int tx, int _layer, int _type, unsigned int light);
 	~Firework();
 
 	void init();
@@ -18,14 +18,22 @@ public:
 
 private: 
 	Particle*** particles;									//sub particles within the firework particle
-	int num;													//number of sub particles
+	int texture;													//texture of the firework particle and subs
+	bool flag_explosion;									//exploded 
+	int layer;														//number of subparticles' layer
+	int subtotal;												//number of each layer's sub particles
+	int type;														//type of subparticle
+	int num;														//number of sub particles
 	int dead_particle;										//number of dead sub particles
-	int flag_emit;											//flag to emit a new layer's sub particles
-	State stat;												//state
+	State stat;													//state
+	int bkg_times;												//background shinning time
+	unsigned int bkg_amb;								//background ambient light
+	float bkg[4];												//attribute background ambient light
 
-	inline void calSpeed(float angle_lat,		//calculate speed of sub particle
-		float angle_lng, float& speed_x, float& speed_y, float& speed_z);
-	void activeParticles(int _layer);				//active each layer's sub particles
+	inline void calSpeed(int layer,					//calculate speed of sub particle 
+		float angle_lat, float angle_lng, float& speed_x, float& speed_y, float& speed_z);
+	void activeParticles();									//active each layer's sub particles
+	void activeObjModels();								//active sub particles with obj models
 };
 
 #endif FIREWORK_H
